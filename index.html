@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+  <h1>Midwest States</h1>
   <div id="map-canvas"></div>
   <script type="text/javascript" src="statesobj.js"></script>
   <script type="text/javascript"
@@ -20,6 +20,7 @@
     </script>
     <script type="text/javascript">
       var drawState = function(map, points) {
+        console.log(points);
         var usState = new google.maps.Polygon({
           paths: points,
           strokeColor: '#FF0000',
@@ -37,9 +38,12 @@
         };
         map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
-        var midWest = ["Illinois", "Indiana", "Iowa", "Kansas", "Michigan", "Minnesota", "Missouri", "Nebraska", "North Dakota", "Ohio", "South Dakota", "Wisconsin"]
+        midWest = ["Colorado", "Illinois", "Indiana", "Iowa", "Kansas", "Michigan", "Minnesota", "Missouri", "Nebraska", "North Dakota", "Ohio", "South Dakota", "Wisconsin"]
         states = loadStates();
-
+        
+        for (var i = 0; i < midWest.length; i++){
+          drawState(map, states[midWest[i]]);
+        }
 
       }
       google.maps.event.addDomListener(window, 'load', initialize);
