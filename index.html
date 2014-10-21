@@ -49,19 +49,56 @@
               <li>replace "list item 4" with "hello". (hint .. use the html() method)</li>
             </ul>
           </div>
+          <hr />
+          <div class="panel">
+            <h2>We love cat gifs!</h2>
+            <p>Let's load some data with getJSON</p>
+            <pre class="brush: js;">
+              var response = {};
+              var url = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC"
+              $.getJSON(url, function(data){
+                response = data;
+              })
+            </pre>
+            <div id="gif_container">
+
+            </div>
+          </div>
           <div class="panel callout radius">
-            <h2>We all love gifs.... Let's load some data!</h2>
+            <h2>Cat gif exercises</h2>
             <ul>
               <li>
+                what is the type of the response?
+              </li>
+              <li>
+                Using the <strong>response</strong> variable we set above, store the first gif as an object. (hint... you can use the console to dive into the response object)
                 <pre class="brush: js;">
-                  var response = {};
-                  var url = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC"
-                  $.getJSON(url, function(data){
-                    response = data;
-                  })
+                  var gifObj = //your code here
                 </pre>
               </li>
-              <li>Using the <strong>response</strong> variable we set above, try to return the first gif url. (hint... you can use the console to dive into the response object)</li>
+              <li>
+                what is the value of: embed_url, caption, content_url, id, images?
+              </li>
+              <li>
+                what are the types of: embed_url, caption, content_url, id, images?
+              </li>
+              <li>
+                Take a closer look at the images object.  Store the original image object:
+                <pre class="brush: js;">
+                  var original_image_object = gifObj.images//your code here
+                </pre>
+              </li>
+              <li>
+                in the DOM (aka... this webpage), find the div with the id "gif_container". (hint... it is not visible to the end user... you'll only find it by looking at the html source)
+              </li>
+              <li>
+                Replace the html contents of gif_container with: 
+                <pre class="brush: js;">
+                  '<img src="' + original_image_object.original.url + '"/>'
+                </pre>
+                (hint... use the jquery html() method).
+              </li>
+
             </ul>
           </div>
         </div>
