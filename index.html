@@ -1,54 +1,105 @@
-<!DOCTYPE>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Mid west states: if it's on the web it's on the web... it's true</title>
-  <style>
-    #map-canvas {
-      width:100%;
-      height:500px;
-    }
-  </style>
-</head>
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Demo</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    <script type="text/javascript" src="js/shCore.js"></script>
+    <script type="text/javascript" src="js/shBrushJScript.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/shCoreDefault.css"/>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+  </head>
+  <body>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Intro to JS</h1>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="row">
+        	<div class="panel">
+  	        <h2>Strings <small>(surrounded by "")</small></h2>
+            <pre class="brush: js;">
+              var s = "hello";
+            </pre>
+            
+            <h3>Add two strings together (concatenation)</h3>
+            <pre class="brush: js;">
+              var foo = "hello";
+              var bar = "world";
+              alert(foo + " " + bar);
+            </pre>
 
-<body>
-  <h1>Midwest States</h1>
-  <h2>If it's on the internet... it's true</h2>
-  <div id="map-canvas"></div>
-  <script type="text/javascript" src="statesobj.js"></script>
-  <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3o8VqsGDKcV-_7vmp5zaIHFfXTnshMqY&sensor=true">
+            <h3>So what else can you do with a string?.... Call "methods"</h3>
+
+            <p>Give me the first letter of var s:</p>
+            <pre class="brush: js;">
+              var foo = "hello"
+              alert(foo.charAt(0)); // charAt is a method called on foo.
+            </pre>
+  	    	</div>
+
+          <div class="panel callout radius">
+            <h2>String Exercises <small><a target="_blank" href="http://www.w3schools.com/jsref/jsref_obj_string.asp">list of string methods</a></small></h2>
+            <pre class="brush: js;">
+              // replace livingsocial with intergalactic
+              var foo = "hello there livingsocial";
+            </pre>
+
+            <pre class="brush: js;">
+              // convert all letters to uppercase
+              var foo = "hello there livingsocial";
+            </pre>
+              
+            <pre class="brush: js;">
+              // remove all trailing and leading whitespaces
+              var foo = "    hello world    ";
+            </pre>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <div class="panel">
+            <h2>Numbers <small>(floats and integers)</small></h2>
+            <pre class="brush: js;">
+              var foo = 1; // integer
+              var bar = 2.3; // float
+            </pre>
+            
+            <h3>Addition, Subtraction, Multiplication, Division</h3>
+            <pre class="brush: js;">
+              var foo = 1; // integer
+              var bar = 2.3; // float
+              foo + bar
+              foo - bar
+              foo * bar
+              foo / bar
+            </pre>
+            
+            <h3>Using the Math class to manipulate numbers</h3>
+            <pre class="brush: js;">
+              var foo = 2.3;
+              alert(Math.round(foo));
+            </pre>
+          </div>
+        </div>
+        <hr />
+
+      </div>
+    </div>
+    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
     </script>
-    <script type="text/javascript">
-      var drawState = function(map, points) {
-        console.log(points);
-        var usState = new google.maps.Polygon({
-          paths: points,
-          strokeColor: '#FF0000',
-          strokeOpacity: 0.8,
-          strokeWeight: 2,
-          fillColor: '#FF0000',
-          fillOpacity: 0.35
-        });
-        usState.setMap(map);
-      }
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(39.50, -98.35),
-          zoom: 4
-        };
-        map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-        midWest = ["Colorado", "Illinois", "Indiana", "Iowa", "Kansas", "Michigan", "Minnesota", "Missouri", "Nebraska", "North Dakota", "Ohio", "South Dakota", "Wisconsin"]
-        states = loadStates();
-        
-        for (var i = 0; i < midWest.length; i++){
-          drawState(map, states[midWest[i]]);
-        }
-
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-
-</body>
+  </body>
 </html>
