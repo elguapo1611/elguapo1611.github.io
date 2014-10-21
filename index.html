@@ -24,74 +24,32 @@
       <div class="large-12 columns">
         <div class="row">
         	<div class="panel">
-  	        <h2>Strings <small>(surrounded by "")</small></h2>
+  	        <h2>jQuery Exercises</h2>
+            <p>The list below has an id of "example1"</p>
+            <ul id="example1">
+              <li>list item 1</li>
+              <li>list item 2</li>
+              <li>list item 3</li>
+              <li>list item 4</li>
+            </ul>
             <pre class="brush: js;">
-              var s = "hello";
+              $("#example1")
             </pre>
             
-            <h3>Add two strings together (concatenation)</h3>
-            <pre class="brush: js;">
-              var foo = "hello";
-              var bar = "world";
-              alert(foo + " " + bar);
-            </pre>
-
-            <h3>So what else can you do with a string?.... Call "methods"</h3>
-
-            <p>Give me the first letter of var s:</p>
-            <pre class="brush: js;">
-              var foo = "hello"
-              alert(foo.charAt(0)); // charAt is a method called on foo.
-            </pre>
   	    	</div>
 
           <div class="panel callout radius">
-            <h2>String Exercises <small><a target="_blank" href="http://www.w3schools.com/jsref/jsref_obj_string.asp">list of string methods</a></small></h2>
-            <pre class="brush: js;">
-              // replace livingsocial with intergalactic
-              var foo = "hello there livingsocial";
-            </pre>
-
-            <pre class="brush: js;">
-              // convert all letters to uppercase
-              var foo = "hello there livingsocial";
-            </pre>
-              
-            <pre class="brush: js;">
-              // remove all trailing and leading whitespaces
-              var foo = "    hello world    ";
-            </pre>
+            <h2>Dom manipulation exercises</h2>
+            <ul>
+              <li>Hide list item 1</li>
+              <li>Hide list item 2 (hint... use nth-child)</li>
+              <li>set the background color of the ul to "#f00" (hint... use jquery css method)</li>
+              <li>insert a new li in the list</li>
+              <li>show list item 1</li>
+              <li>replace "list item 4" with "hello". (hint .. use the html() method)</li>
+            </ul>
           </div>
         </div>
-
-        <hr />
-
-        <div class="row">
-          <div class="panel">
-            <h2>Numbers <small>(floats and integers)</small></h2>
-            <pre class="brush: js;">
-              var foo = 1; // integer
-              var bar = 2.3; // float
-            </pre>
-            
-            <h3>Addition, Subtraction, Multiplication, Division</h3>
-            <pre class="brush: js;">
-              var foo = 1; // integer
-              var bar = 2.3; // float
-              foo + bar
-              foo - bar
-              foo * bar
-              foo / bar
-            </pre>
-            
-            <h3>Using the Math class to manipulate numbers</h3>
-            <pre class="brush: js;">
-              var foo = 2.3;
-              alert(Math.round(foo));
-            </pre>
-          </div>
-        </div>
-        <hr />
 
       </div>
     </div>
