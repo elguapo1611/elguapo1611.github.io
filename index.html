@@ -16,7 +16,7 @@
     
     <div class="row">
       <div class="large-12 columns">
-        <h1>Intro to JS</h1>
+        <h1>Intro to JS <small>Try out these exercises in the web console</small></h1>
       </div>
     </div>
     
@@ -47,6 +47,21 @@
               <li>insert a new li in the list</li>
               <li>show list item 1</li>
               <li>replace "list item 4" with "hello". (hint .. use the html() method)</li>
+            </ul>
+          </div>
+          <div class="panel callout radius">
+            <h2>We all love gifs.... Let's load some data!</h2>
+            <ul>
+              <li>
+                <pre class="brush: js;">
+                  var response = {};
+                  var url = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC"
+                  $.getJSON(url, function(data){
+                    response = data;
+                  })
+                </pre>
+              </li>
+              <li>Using the <strong>response</strong> variable we set above, try to return the first gif url. (hint... you can use the console to dive into the response object)</li>
             </ul>
           </div>
         </div>
